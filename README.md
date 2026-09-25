@@ -44,5 +44,4 @@ Pembuatan isi halaman, pemilihan topik, data buku, gambar, dan keputusan akhir d
 | --radius-md | 0.5rem | sudut tombol dan kartu |
 | --space-4 | 1rem | jarak standar antar elemen |
  
-Kriteria selesai saya: mengubah --color-primary di satu baris
-harus mengubah warna tombol, tautan, judul, dan garis fokus.
+Kriteria selesai saya: mengubah color-primary di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus tanpa menyunting berkas CSS lainnya.
