@@ -2,10 +2,10 @@
  
 - Berkas gaya yang akan dibuat: tokens.css, base.css,
   layout.css, komponen.css, tema.css
-- Warna utama: `#6B4F3A` (cokelat), dipilih karena sesuai dengan tema koleksi buku dan memberikan kesan hangat serta elegan.
+- Warna utama: #6B4F3A (cokelat), dipilih karena sesuai dengan tema koleksi buku dan memberikan kesan hangat serta elegan.
 - Halaman menggunakan design token untuk warna, jarak, sudut, bayangan, dan ukuran huruf.
-- Layout akan menggunakan Flexbox dan `gap`.
-- Tipografi menggunakan satuan relatif seperti `rem`.
+- Layout akan menggunakan Flexbox dan gap.
+- Tipografi menggunakan satuan relatif seperti remg.
 - Tema gelap akan menggunakan token semantik.
 
  
