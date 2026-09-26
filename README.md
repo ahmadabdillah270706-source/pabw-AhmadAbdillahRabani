@@ -25,6 +25,10 @@
  
 Kriteria selesai saya: mengubah color-primary di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus tanpa menyunting berkas CSS lainnya.
 
+## Catatan Penggunaan AI
+
+AI digunakan untuk membantu menentukan dan memeriksa nilai kontras warna pada tampilan halaman.
+Pembuatan isi halaman, pemilihan topik, data buku, gambar, struktur kode, serta keputusan akhir dalam pengerjaan dilakukan dan diperiksa sendiri.
 
 # PABW — AHMAD ABDILLAH RABANI — 25523225
 
