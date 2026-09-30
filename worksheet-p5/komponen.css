@@ -1,0 +1,241 @@
+
+.galeri {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(16rem, 1fr)
+    );
+
+  gap:
+    var(--space-4);
+
+  min-width:
+    0;
+
+}
+
+.kartu {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    var(--space-4);
+
+  min-width:
+    0;
+
+  min-height:
+    14rem;
+
+  background:
+    var(--color-surface);
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-md);
+
+  box-shadow:
+    var(--shadow-1);
+
+  padding:
+    var(--card-pad);
+
+}
+
+.kartu__isi {
+
+  min-width:
+    0;
+
+}
+
+
+.kartu__judul {
+
+  overflow-wrap:
+    anywhere;
+
+}
+
+.kartu figure {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    var(--space-3);
+
+  min-width:
+    0;
+
+}
+
+
+.kartu figure img {
+
+  width:
+    100%;
+
+  max-width:
+    100%;
+
+  height:
+    auto;
+
+}
+
+
+.kartu figcaption {
+
+  overflow-wrap:
+    anywhere;
+
+}
+
+.kartu__kaki {
+
+  display:
+    flex;
+
+  flex-direction:
+    row;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    var(--space-2);
+
+  flex-wrap:
+    wrap;
+
+  margin-top:
+    auto;
+
+  min-width:
+    0;
+
+}
+
+.sorotan {
+
+  grid-column:
+    span 2;
+
+}
+
+.papan {
+
+  min-width:
+    0;
+
+  overflow-x:
+    auto;
+
+}
+
+
+table {
+
+  width:
+    100%;
+
+  border-collapse:
+    collapse;
+
+}
+
+
+caption {
+
+  text-align:
+    left;
+
+  font-weight:
+    600;
+
+  padding-block:
+    var(--space-2);
+
+}
+
+
+th,
+td {
+
+  padding:
+    var(--space-2);
+
+  border:
+    1px solid
+    var(--color-border);
+
+  text-align:
+    left;
+
+  white-space:
+    nowrap;
+
+}
+
+#kontak {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    var(--space-4);
+
+  min-width:
+    0;
+
+}
+
+
+#kontak form {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    var(--space-4);
+
+  min-width:
+    0;
+
+}
+
+.kartu,
+.kartu__isi,
+.kartu__kaki,
+.galeri,
+.papan,
+#kontak {
+
+  min-width:
+    0;
+
+}

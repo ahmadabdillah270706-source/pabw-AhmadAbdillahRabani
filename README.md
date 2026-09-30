@@ -1,3 +1,27 @@
+# PABW — AHMAD ABDILLAH RABANI — 25523225
+
+Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
+Berbasis Web, satu folder untuk setiap pertemuan.
+
+## Pertemuan 5 — Layout Modern: Flexbox dan Grid
+
+Topik halaman saya: pengaturan layout modern pada halaman koleksi rak buku saya.
+- Halaman menggunakan CSS Grid untuk kerangka halaman, pembagian content, dan galeri.
+- Halaman menggunakan Flexbox untuk navbar, menu sidebar, isi kartu, dan footer kartu.
+- Kerangka halaman: header, content, dan footer.
+- Content dibagi menjadi dua kolom: sidebar dan konten utama.
+- Galeri menggunakan Grid adaptif dengan auto-fit dan minmax().
+- Penempatan elemen menggunakan span dan area bernama.
+- Jarak antar elemen menggunakan gap.
+- Layout menggunakan satuan relatif seperti rem dan fr.
+- Layout diuji agar tidak meluber pada ukuran layar 360 px dan 1.280 px.
+
+## Catatan Penggunaan AI
+
+AI digunakan untuk membantu pada bagian yang paling sulit, yaitu memahami dan memeriksa penggunaan CSS Grid dan Flexbox, terutama grid-template-areas, grid-column: span, dan repeat(auto-fit, minmax()).
+
+Pembuatan isi halaman, pemilihan topik, data buku, gambar, struktur kode, serta keputusan akhir dalam pengerjaan dilakukan dan diperiksa sendiri.
+
 ## Pertemuan 4 — Design token halaman profil
  
 - Berkas gaya yang akan dibuat: tokens.css, base.css,
@@ -29,11 +53,6 @@ Kriteria selesai saya: mengubah color-primary di satu baris harus mengubah warna
 
 AI digunakan untuk membantu menentukan dan memeriksa nilai kontras warna pada tampilan halaman.
 Pembuatan isi halaman, pemilihan topik, data buku, gambar, struktur kode, serta keputusan akhir dalam pengerjaan dilakukan dan diperiksa sendiri.
-
-# PABW — AHMAD ABDILLAH RABANI — 25523225
-
-Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
-Berbasis Web, satu folder untuk setiap pertemuan.
 
 ## Pertemuan 3 — Halaman Profil Saya
 
