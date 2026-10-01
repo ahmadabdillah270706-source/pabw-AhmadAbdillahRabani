@@ -3,6 +3,25 @@
 Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
 Berbasis Web, satu folder untuk setiap pertemuan.
 
+## Pertemuan 6 — Responsif Mobile-First
+
+- Halaman menggunakan meta viewport agar tampilan mengikuti lebar perangkat.
+- Layout dasar dibuat satu kolom untuk layar kecil.
+- Menu sidebar ditempatkan di atas konten utama pada ukuran layar kecil.
+- Galeri menggunakan Grid satu kolom pada layar kecil dan berubah menjadi dua kolom pada breakpoint 48rem.
+- Sidebar dan konten utama disusun berdampingan pada breakpoint 60rem.
+- Breakpoint menggunakan min-width dengan satuan rem.
+- Gambar menggunakan max-width: 100% agar tidak meluber dari wadah.
+- Tabel menggunakan overflow-x: auto agar tabel lebar dapat digulir sendiri.
+- Ukuran teks menggunakan satuan relatif seperti rem.
+- Layout diuji pada ukuran layar 360 px, 768 px, dan 1.280 px untuk memastikan tidak terjadi gulir mendatar.
+
+## Catatan Penggunaan AI
+
+AI digunakan untuk membantu memahami dan memeriksa penerapan responsive design dan pendekatan mobile-first, terutama pengaturan satu kolom pada layar kecil, penggunaan breakpoint 48rem dan 60rem, serta penyesuaian gambar dan tabel agar tidak meluber.
+
+Pembuatan isi halaman, pemilihan topik, data buku, gambar, struktur kode, serta keputusan akhir dalam pengerjaan dilakukan dan diperiksa sendiri.
+
 ## Pertemuan 5 — Layout Modern: Flexbox dan Grid
 
 Topik halaman saya: pengaturan layout modern pada halaman koleksi rak buku saya.
