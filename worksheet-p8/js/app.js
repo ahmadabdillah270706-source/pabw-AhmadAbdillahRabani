@@ -17,7 +17,7 @@ const profil = {
   nama: "Ahmad Abdillah Rabani",
   peran: "Mahasiswa Informatika",
   keahlian: ["HTML", "CSS", "JavaScript"],
-  julahProyek: 3,
+  jumlahProyek: 3,
 };
 
 
