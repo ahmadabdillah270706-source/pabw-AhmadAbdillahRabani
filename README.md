@@ -3,6 +3,29 @@
 Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
 Berbasis Web, satu folder untuk setiap pertemuan.
 
+## Pertemuan 8 — JavaScript Modern ES6+, Struktur Data, dan Array Methods
+
+- JavaScript dihubungkan ke halaman menggunakan file js/app.js dengan <script type="module">.
+- Data profil disimpan menggunakan variabel const dan let sesuai kebutuhan.
+- const digunakan untuk data yang tidak perlu diubah, sedangkan let digunakan untuk nilai yang dapat berubah.
+- Template literal digunakan untuk menyusun teks dengan ${}.
+- Data profil disimpan dalam bentuk object yang berisi nama, peran, dan daftar keahlian.
+- Data proyek disimpan dalam array of objects yang berisi judul, tahun, dan status selesai.
+- Function buatPerkenalan() dan formatKeahlian() dibuat sebagai pure function dengan parameter dan nilai return.
+- Method filter() digunakan untuk mengambil proyek yang sudah selesai.
+- Method find() digunakan untuk mencari satu proyek berdasarkan judul.
+- Method map() digunakan untuk mengubah setiap data dalam array menjadi bentuk baru.
+- Method reduce() digunakan untuk menghasilkan satu nilai dari seluruh data array.
+- Spread operator digunakan untuk membuat salinan array sebelum melakukan sort() agar data asli tidak berubah.
+- console.log() dan console.table() digunakan untuk memeriksa hasil pengolahan data melalui Console browser.
+- JavaScript dijalankan menggunakan local server/Live Server agar module script dapat berjalan dengan baik.
+- Console browser digunakan untuk memeriksa error, hasil function, serta data array dan object.
+
+## Catatan Penggunaan AI
+AI digunakan untuk membantu memahami konsep JavaScript modern ES6+, terutama penggunaan const dan let, object dan array of objects, pure function, serta method map(), filter(), find(), dan reduce().
+AI juga digunakan untuk membantu memahami cara membaca pesan error pada Console dan memeriksa hasil kode selama pengerjaan.
+Penulisan dan penerapan kode pada app.js, pemilihan data profil dan proyek, pengujian melalui Console, serta keputusan akhir dalam pengerjaan dilakukan dan diperiksa sendiri.
+
 ## Pertemuan 6 — Responsif Mobile-First
 
 - Halaman menggunakan meta viewport agar tampilan mengikuti lebar perangkat.
