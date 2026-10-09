@@ -3,6 +3,33 @@
 Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
 Berbasis Web, satu folder untuk setiap pertemuan.
 
+## Pertemuan 9 — JavaScript DOM, Event, dan Validasi Form
+
+* JavaScript dihubungkan ke halaman menggunakan file js/dom.js dengan <script type="module">.
+* querySelector() digunakan untuk mengambil elemen HTML berdasarkan pemilih CSS.
+* querySelectorAll() digunakan untuk mengambil beberapa elemen yang cocok dengan pemilih.
+* createElement() digunakan untuk membuat elemen HTML baru melalui JavaScript.
+* textContent digunakan untuk mengisi teks elemen dengan aman.
+* append() digunakan untuk menambahkan elemen ke dalam wadah galeri buku.
+* replaceChildren() atau innerHTML = "" digunakan untuk mengosongkan wadah sebelum proses render ulang agar kartu tidak berlipat.
+* addEventListener() digunakan untuk menangani peristiwa klik dan pengiriman form.
+* Event delegation digunakan dengan memasang satu event listener pada elemen induk untuk menangani tombol filter.
+* event.target dan closest() digunakan untuk mengetahui tombol filter yang diklik.
+* dataset digunakan untuk membaca atribut data-*, seperti kategori pada tombol filter.
+* Method filter() digunakan untuk menampilkan buku sesuai kategori yang dipilih.
+* Pesan keadaan kosong ditampilkan ketika tidak ada buku yang sesuai dengan kategori filter.
+* preventDefault() digunakan untuk mencegah form memuat ulang halaman saat dikirim.
+* Validasi form digunakan untuk memeriksa judul, penulis, dan tahun sebelum data buku ditambahkan.
+* trim() digunakan untuk menghapus spasi di awal dan akhir input serta mencegah input yang hanya berisi spasi.
+* Console browser dan DevTools digunakan untuk memeriksa error, elemen DOM, event listener, dan hasil pengujian fitur.
+
+## Catatan Penggunaan AI
+
+AI digunakan untuk membantu memahami konsep DOM, pemilihan elemen HTML, pembuatan elemen menggunakan createElement() dan textContent, serta penerapan event listener dan event delegation.
+AI juga digunakan untuk membantu memahami proses render ulang, pemfilteran data buku, penanganan keadaan kosong, dan validasi form menggunakan JavaScript.
+Penulisan dan penerapan kode pada js/dom.js, penyesuaian halaman HTML, pengujian melalui browser, serta pemeriksaan hasil akhir dilakukan dan diperiksa sendiri.
+
+
 ## Pertemuan 8 — JavaScript Modern ES6+, Struktur Data, dan Array Methods
 
 - JavaScript dihubungkan ke halaman menggunakan file js/app.js dengan <script type="module">.
