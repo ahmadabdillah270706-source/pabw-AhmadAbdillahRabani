@@ -3,6 +3,39 @@
 Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
 Berbasis Web, satu folder untuk setiap pertemuan.
 
+## Pertemuan 10 — JavaScript Asynchronous, Fetch API, Promise, dan JSON
+
+* Fetch API digunakan untuk mengambil data dari sumber eksternal melalui URL API.
+* Fungsi ambilNotisia() pada file js/api.js digunakan untuk mengambil data dari API JSONPlaceholder.
+* URL API disimpan dalam satu konstanta agar mudah dikelola dan digunakan kembali.
+* async digunakan untuk membuat fungsi asinkron yang dapat menggunakan await.
+* await digunakan untuk menunggu proses pengambilan data dan pembacaan respons selesai.
+* try/catch digunakan untuk menangani kesalahan selama proses pengambilan dan pengolahan data API.
+* response.ok digunakan untuk memeriksa apakah respons HTTP berhasil sebelum data dibaca.
+* response.status digunakan untuk memeriksa kode status HTTP dari respons API.
+* response.headers.get('content-type') digunakan untuk memeriksa jenis konten yang dikirim oleh API.
+* response.json() digunakan untuk membaca respons JSON dan mengubahnya menjadi nilai JavaScript.
+* throw new Error() digunakan untuk menghasilkan kesalahan ketika respons API tidak berhasil.
+* export dan import digunakan untuk menghubungkan fungsi pengambilan data pada js/api.js dengan js/app.js.
+* File js/app.js bertugas memanggil fungsi API, mengolah data yang diterima, dan menampilkan hasilnya pada halaman.
+* createElement() digunakan untuk membuat elemen HTML untuk menampilkan data API.
+* textContent digunakan untuk menampilkan judul dan isi berita atau kiriman API dengan aman.
+* append() digunakan untuk menambahkan elemen hasil pengolahan data ke dalam halaman.
+* replaceChildren() digunakan untuk membersihkan wadah sebelum menampilkan data baru agar elemen tidak berlipat.
+* Keadaan loading ditampilkan ketika proses pengambilan data sedang berlangsung.
+* Keadaan berhasil ditampilkan ketika data berhasil diperoleh dan ditampilkan pada halaman.
+* Keadaan gagal ditampilkan ketika terjadi kesalahan saat mengambil atau mengolah data API.
+* Keadaan kosong ditampilkan ketika API berhasil diakses tetapi tidak mengembalikan data untuk ditampilkan.
+* console.log() dan console.error() digunakan untuk membantu memeriksa data, status respons, dan kesalahan melalui Console browser.
+* JSON digunakan sebagai format pertukaran data antara API dan aplikasi JavaScript.
+* JSON.parse() digunakan untuk mengubah teks JSON menjadi nilai JavaScript.
+* JSON.stringify() digunakan untuk mengubah nilai JavaScript menjadi teks JSON.
+* Browser DevTools digunakan untuk memeriksa respons API, pesan kesalahan, dan hasil pengujian fitur.
+
+## Catatan Penggunaan AI
+
+AI digunakan untuk membantu memahami penggunaan async/await dan try/catch dalam pengambilan data dari API serta penanganan kesalahan. Penerapan kode dan pengujian hasil dilakukan dan diperiksa sendiri.
+
 ## Pertemuan 9 — JavaScript DOM, Event, dan Validasi Form
 
 * JavaScript dihubungkan ke halaman menggunakan file js/dom.js dengan <script type="module">.
