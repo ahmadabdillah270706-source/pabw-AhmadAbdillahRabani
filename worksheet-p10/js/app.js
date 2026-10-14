@@ -1,3 +1,14 @@
+import { ambilNotisia } from './api.js';
+
+ambilNotisia()
+  .then(data => {
+    console.log('Data API:', data);
+  })
+  .catch(galat => {
+    console.error('Gagal mengambil data:', galat.message);
+  });
+
+
 const nama = "Ahmad Abdillah Rabani";
 const jumlahProyek = 3;
 
@@ -66,3 +77,25 @@ const urutanProyek = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
 
 console.table(urutanProyek);
 console.table(daftarProyek);
+
+
+export const daftarBuku = [
+  {
+    id: 1,
+    judul: "Janji",
+    penulis: "Tere Liye",
+    tahun: 2021,
+    kategori: "Novel",
+    gambar: "rak-buku/rak-buku.jpeg",
+    sinopsis: "Kisah perjalanan tiga santri untuk mencari Bahar Safar."
+  },
+  {
+    id: 2,
+    judul: "Tentang Kamu",
+    penulis: "Tere Liye",
+    tahun: 2016,
+    kategori: "Novel",
+    gambar: "rak-buku/rak-buku1.jpeg",
+    sinopsis: "Kisah hidup Sri Ningsih yang ditelusuri oleh seorang pengacara."
+  },
+];
