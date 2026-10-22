@@ -1,0 +1,80 @@
+
+.isi {
+  grid-template-columns:
+    1fr;
+
+  grid-template-areas:
+    "sisi"
+    "utama";
+
+  gap:
+    var(--space-4);
+}
+
+
+.galeri {
+  grid-template-columns:
+    1fr;
+
+  gap:
+    var(--space-4);
+}
+
+
+.sorotan {
+  grid-column:
+    auto;
+}
+
+
+@media (min-width: 48rem) {
+
+  .galeri {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (min-width: 60rem) {
+
+  .isi {
+    grid-template-columns:
+      1fr 2fr;
+
+    grid-template-areas:
+      "sisi utama";
+  }
+
+
+  .sorotan {
+    grid-column:
+      span 2;
+  }
+
+}
+
+
+img {
+  max-width:
+    100%;
+
+  height:
+    auto;
+}
+
+
+.papan {
+  overflow-x:
+    auto;
+}
+
+
+p {
+  font-size:
+    1rem;
+
+  line-height:
+    1.6;
+}

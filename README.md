@@ -3,6 +3,79 @@
 Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi
 Berbasis Web, satu folder untuk setiap pertemuan.
 
+## Pertemuan 12 — Build Tooling, npm, dan Framework SPA
+
+- Proyek Vue 3 diinisialisasi menggunakan Vite (`npm create vite@latest . -- --template vue`) langsung di dalam direktori `worksheet-p12/`.
+- Perangkat yang digunakan:
+  - Node.js LTS: `v22.17.0`
+  - npm: `10.9.2`
+- Seluruh 6 berkas CSS asli (tokens, base, layout, komponen, tema, responsif) dari Pertemuan 11 dipindahkan ke `src/` tanpa diubah dan diimpor berurutan di `src/main.js`.
+- File `profil.html` dibersihkan dan dipindahkan ke Single File Components (SFC) Vue dengan struktur 4 komponen:
+  1. `KepalaProfil.vue`: Menerima data identitas melalui `props: { profil: Object }` dari komponen induk `App.vue`.
+  2. `TombolFilter.vue`: Menampilkan filter kategori ("Semua", "Novel") dan tombol reset yang terhubung langsung ke state bersama.
+  3. `DaftarProyek.vue`: Menampilkan galeri kartu buku dan tabel data koleksi menggunakan filter reaktif `v-for` dengan `:key="buku.id"`, serta menyajikan data postingan API dari `src/api.js`.
+  4. `FormKontak.vue`: Formulir tambah buku menggunakan reaktivitas lokal (`ref`) untuk input judul, penulis, dan tahun, yang memperbarui koleksi buku tanpa perlu memuat ulang halaman.
+- Pengelolaan keadaan (state management) menggunakan `reactive()` dari Vue di `src/state.js`, menggantikan fungsi `render(state)` manual dari vanilla JavaScript.
+- Sinkronisasi `localStorage` dikelola dengan siklus hidup:
+  - `onMounted()` untuk membaca data tersimpan satu kali saat aplikasi dimuat.
+  - `watch(..., { deep: true })` untuk otomatis menyimpan perubahan state ke `localStorage`.
+- Berkas statis gambar (`rak-buku.jpeg` dan `rak-buku1.jpeg`) dipindahkan ke direktori `public/rak-buku/` agar dapat diakses oleh browser tanpa error 404.
+- Konfigurasi `.gitignore` menyaring folder `node_modules/` dan `dist/`, sedangkan `package.json` dan `package-lock.json` tetap dikomit ke repositori.
+- Build produksi dilakukan menggunakan `npm run build` yang menghasilkan bundle optimal di folder `dist/`:
+  - Ukuran sebelum build (sumber terpisah dev): ~20+ berkas terpisah, total file modul `src/` ~22 KB + dependensi Vue runtime di browser.
+  - Ukuran sesudah build (`dist/`): 3 berkas utama (`index.html`: 0.38 kB, `index-DNBtsGKO.css`: 5.43 kB, `index-DH7vDnvg.js`: 77.82 kB / gzip 30.57 kB).
+- Pengujian build produksi diverifikasi dan berjalan lancar menggunakan `npm run preview`.
+
+### Jawaban Tiket Keluar (Lembar G)
+1. **Bedanya dependencies dan devDependencies**:
+   - `dependencies` adalah paket yang dibutuhkan saat aplikasi berjalan di lingkungan produksi (runtime), contohnya: `vue`.
+   - `devDependencies` adalah perkakas pendukung yang hanya digunakan selama proses pengembangan dan build produksi, contohnya: `vite` dan `@vitejs/plugin-vue`.
+2. **Mengapa package-lock.json wajib disimpan di repositori sedangkan node_modules/ tidak?**:
+   - `package-lock.json` mengunci pohon dependensi secara presisi (versi exact dan checksum integritas paket) agar semua pengembang dan server build menginstal versi yang identik 100%.
+   - `node_modules/` berisi ribuan berkas unduhan yang berukuran sangat besar dan redundan, serta dapat diunduh ulang kapan saja cukup dengan menjalankan perintah `npm install`.
+3. **Apa yang dilakukan perintah `npm create vite@latest . -- --template vue`? Apa arti titik pada perintah itu?**:
+   - Perintah tersebut menyiapkan kerangka kerja (scaffolding) proyek Vite dengan template Vue 3.
+   - Tanda titik (`.`) berarti kerangka proyek dibuat langsung di dalam folder kerja aktif saat ini (current directory), bukan membuat subdirektori baru.
+4. **Di Pertemuan 11 Anda memanggil render(state) sendiri. Apa yang menggantikannya di Vue, dan siapa yang memanggilnya sekarang?**:
+   - Digantikan oleh declarative template dan reactivity system Vue.
+   - Yang memanggilnya sekarang adalah engine reaktivitas Vue secara otomatis di latar belakang ketika ada mutasi pada data/state reaktif (`reactive` atau `ref`).
+5. **Mengapa props tidak boleh diubah dari dalam komponen anak?**:
+   - Karena Vue menerapkan aliran data satu arah (*one-way data flow*). Jika komponen anak mengubah props, data di komponen induk bisa bermutasi di luar kendali dan memicu bug pelacakan mutasi. Data anak seharusnya hanya membaca props atau mengirimkan event (`emit`) jika ingin meminta perubahan.
+6. **Apa bedanya npm run dev dan npm run preview? Kapan Anda memakai masing-masing?**:
+   - `npm run dev`: Menjalankan development server lokal berbasis Vite dengan Hot Module Replacement (HMR) cepat, digunakan sehari-hari saat menulis kode.
+   - `npm run preview`: Menjalankan server lokal statis untuk menguji hasil build produksi dari folder `dist/`, digunakan setelah `npm run build` selesai untuk memastikan bundel produksi bekerja dengan benar sebelum di-deploy.
+7. **Mengapa dist/ diabaikan sedangkan hasilnya justru yang dijalankan peramban di produksi?**:
+   - Folder `dist/` adalah artefak keluaran (build output) yang dapat digenerate ulang sewaktu-waktu dari kode sumber menggunakan perintah `npm run build`. Menyimpan hasil build yang selalu berubah hash kodenya akan mengotori riwayat git repository.
+
+### Catatan Penggunaan AI
+AI digunakan untuk membantu menganalisis kesalahan penataan folder proyek sebelumnya, mengonfigurasi kerangka minimal Vite Vue 3, serta memandu pemisahan halaman profil Pertemuan 11 ke dalam 4 komponen Single File Component (SFC) dengan props dan state bersama. Penulisan kode, penyesuaian CSS tema rak buku, eksekusi pengujian build dan preview, serta verifikasi hasil akhir dilakukan dan divalidasi sendiri.
+
+## Pertemuan 11 — JavaScript Modul, State, dan Penyimpanan Klien
+- Modul JavaScript digunakan untuk memisahkan kode aplikasi berdasarkan tanggung jawab masing-masing file.
+- export dan import digunakan untuk berbagi data dan fungsi antar-modul.
+- data.js digunakan untuk menyimpan data awal aplikasi.
+- state.js digunakan untuk mengelola state atau keadaan aplikasi.
+- dom.js digunakan untuk menampilkan state ke halaman melalui DOM.
+- events.js digunakan untuk menangani interaksi pengguna, seperti klik tombol dan perubahan kategori.
+- app.js digunakan untuk menghubungkan modul dan menjalankan aplikasi.
+- State digunakan sebagai sumber data utama agar keadaan aplikasi tetap konsisten.
+- Fungsi render(state) digunakan untuk menampilkan data berdasarkan state saat ini.
+- localStorage digunakan untuk menyimpan data di browser agar tetap tersedia setelah halaman dimuat ulang.
+- localStorage.setItem() digunakan untuk menyimpan data ke localStorage.
+- localStorage.getItem() digunakan untuk mengambil data dari localStorage.
+- localStorage.removeItem() digunakan untuk menghapus data tertentu dari localStorage.
+- JSON.stringify() digunakan untuk mengubah objek JavaScript menjadi teks JSON sebelum disimpan.
+- JSON.parse() digunakan untuk mengubah teks JSON menjadi objek JavaScript saat data dimuat.
+- try/catch digunakan untuk menangani kesalahan ketika membaca data JSON yang tidak valid.
+- Versi penyimpanan digunakan untuk memeriksa apakah data yang tersimpan sesuai dengan format yang diharapkan aplikasi.
+- Data yang rusak atau memiliki versi yang tidak sesuai perlu ditangani agar tidak mengganggu jalannya aplikasi.
+- State awal digunakan sebagai nilai bawaan ketika belum ada data penyimpanan yang valid.
+- Tombol reset digunakan untuk menghapus state tersimpan dan mengembalikan aplikasi ke keadaan awal.
+- Browser DevTools digunakan untuk memeriksa localStorage, pesan kesalahan, dan perilaku aplikasi.
+
+## Catatan Penggunaan AI
+AI digunakan untuk membantu memahami pemisahan modul, pengelolaan state, dan penyimpanan data menggunakan localStorage. AI juga membantu menemukan kesalahan dan memperbaiki kode JavaScript, terutama pada proses pemuatan data, pemeriksaan versi penyimpanan, serta penanganan data yang rusak agar aplikasi tetap berjalan dengan baik.
+
 ## Pertemuan 10 — JavaScript Asynchronous, Fetch API, Promise, dan JSON
 
 * Fetch API digunakan untuk mengambil data dari sumber eksternal melalui URL API.
